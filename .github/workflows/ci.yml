@@ -1,12 +1,11 @@
 name: DEFAULT
 on: [workflow_dispatch]
 jobs:
-  hello:
+  pull_and_build:
     runs-on: windows
 
     steps:
-      name: salute
-      run: echo 'Bonjour Simplon'
+      name: Deploy using SSH
       uses: appleboy/ssh-action@master
       with:
         host: ${{secrets.HOST}}
@@ -14,6 +13,9 @@ jobs:
         key: ${{secrets.PRIVATE_KEY}}
         port: 22
         script: |
-          cd ~/projets/demol/char
+          cd ~/projets/demo1/marc
           pwd
-          touch createfile.txt
+          git pull origin devops
+          git status
+          npm install
+          npm run build
