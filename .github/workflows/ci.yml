@@ -2,7 +2,7 @@ name: DEFAULT
 on: [workflow_dispatch]
 jobs:
   pull_and_build:
-    runs-on: windows
+    runs-on: ubuntu-latest
 
     steps:
       name: Deploy using SSH
