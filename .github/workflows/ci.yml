@@ -1,0 +1,19 @@
+name: DEFAULT
+on: [workflow_dispatch]
+jobs:
+  hello:
+    runs-on: windows
+
+    steps:
+      name: salute
+      run: echo 'Bonjour Simplon'
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{secrets.HOST}}
+        username: ${{secrets.USER_NAME}}
+        key: ${{secrets.PRIVATE_KEY}}
+        port: 22
+        script: |
+          cd ~/projets/demol/char
+          pwd
+          touch createfile.txt
