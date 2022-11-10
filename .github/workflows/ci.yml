@@ -13,7 +13,7 @@ jobs:
         key: ${{secrets.PRIVATE_KEY}}
         port: 3008
         script: |
-          cd ~/projets/demo1/marc
+          cd ~/projets/demo1/marc/AVPS
           pwd
           git pull origin master
           git status
