@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Deploy using SSH
+    - name: Deploy using SSH
       uses: appleboy/ssh-action@master
       with:
         host: ${{secrets.HOST}}
