@@ -38,4 +38,4 @@ jobs:
               docker rm marc
               docker rmi $(docker images | grep 'marcclockbox')
               echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-              docker run -dp 3008:3008 --name="marc" -e 'test=${{ secrets.MOT }}' ${{ secrets.DOCKERHUB_USERNAME }}/marcclockbox:latest
+              docker run -dp 3017:3017 --name="marc" -e 'test=${{ secrets.MOT }}' ${{ secrets.DOCKERHUB_USERNAME }}/marcclockbox:latest
